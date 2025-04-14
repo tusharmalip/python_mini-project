@@ -1,0 +1,50 @@
+csv 
+
+Date,Product,Category,Region,Units Sold,Unit Price,Total Sales
+2024-01-05,Smartphone,Electronics,North,10,500,5000
+2024-01-12,Laptop,Electronics,South,5,800,4000
+2024-02-03,Headphones,Accessories,East,20,50,1000
+2024-02-15,Smartwatch,Accessories,West,15,200,3000
+2024-03-10,Tablet,Electronics,North,8,300,2400
+
+
+
+
+
+
+Visual O/P:- 
+
+First 5 rows of the dataset:
++------------+------------+-------------+--------+-------------+------------+-------------+
+|    Date    |  Product   |  Category   | Region | Units Sold  | Unit Price | Total Sales |
++------------+------------+-------------+--------+-------------+------------+-------------+
+| 2024-01-05 | Smartphone | Electronics | North  |     10      |    500     |    5000     |
+| 2024-01-12 |  Laptop    | Electronics | South  |     5       |    800     |    4000     |
+| 2024-02-03 | Headphones | Accessories | East   |     20      |     50     |    1000     |
+| 2024-02-15 | Smartwatch | Accessories | West   |     15      |    200     |    3000     |
+| 2024-03-10 |  Tablet    | Electronics | North  |     8       |    300     |    2400     |
++------------+------------+-------------+--------+-------------+------------+-------------+
+
+💰 Total Revenue: ₹15400.00
+📦 Total Units Sold: 58
+
+📈 Sales by Product:
++------------+-------------+
+|  Product   | Total Sales |
++------------+-------------+
+| Smartphone |    5000     |
+|  Laptop    |    4000     |
+| Smartwatch |    3000     |
+|  Tablet    |    2400     |
+| Headphones |    1000     |
++------------+-------------+
+
+🌍 Sales by Region:
++--------+-------------+
+| Region | Total Sales |
++--------+-------------+
+| North  |    7400     |
+| South  |    4000     |
+| West   |    3000     |
+| East   |    1000     |
++--------+-------------+

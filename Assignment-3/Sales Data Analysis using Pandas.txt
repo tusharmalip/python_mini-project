@@ -1,0 +1,41 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from tabulate import tabulate
+
+# Load the dataset
+df = pd.read_csv("sales_data.csv")
+
+# Preview the dataset
+print("First 5 rows of the dataset:")
+print(tabulate(df.head(), headers='keys', tablefmt='pretty'))
+
+# 1. Total Revenue
+total_revenue = df["Total Sales"].sum()
+print(f"\n💰 Total Revenue: ₹{total_revenue:.2f}")
+
+# 2. Total Units Sold
+total_units = df["Units Sold"].sum()
+print(f"📦 Total Units Sold: {total_units}")
+
+# 3. Sales by Product
+product_sales = df.groupby("Product")["Total Sales"].sum().sort_values(ascending=False)
+print("\n📈 Sales by Product:")
+print(tabulate(product_sales.reset_index(), headers='keys', tablefmt='pretty'))
+
+# 4. Sales by Region
+region_sales = df.groupby("Region")["Total Sales"].sum()
+print("\n🌍 Sales by Region:")
+print(tabulate(region_sales.reset_index(), headers='keys', tablefmt='pretty'))
+
+# 5. Monthly Trend
+df['Date'] = pd.to_datetime(df['Date'])
+df['Month'] = df['Date'].dt.to_period("M")
+monthly_sales = df.groupby("Month")["Total Sales"].sum()
+
+# Plotting monthly trend
+monthly_sales.plot(kind="line", title="Monthly Sales Trend", marker='o')
+plt.ylabel("Total Sales")
+plt.xlabel("Month")
+plt.grid(True)
+plt.tight_layout()
+plt.show()
